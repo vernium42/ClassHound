@@ -6,12 +6,12 @@ class Monitor:
         """ Store parameter values of a function when function is used in program.
 
         Example:
-        m = Monitor()
-        print = m.function_parameter(print, (None, "end"))
-        print("Hi, Bob", end="\n\n")
-        print("Hi, Ron", end="\n")
-        print(m.values)
-        # ['\n\n', '\n']
+            m = Monitor()
+            print = m.function_parameter(print, (None, "end"))
+            print("Hi, Bob", end="\n\n")
+            print("Hi, Ron", end="\n")
+            print(m.values)
+            # ['\n\n', '\n']
         """
         self.values = []
 
@@ -40,7 +40,7 @@ class Monitor:
 
         :param func: Function to monitor.
         :param param_details: Parameter location details tuple(<parameter_args_index>, <parameter_name>)
-        :return: func
+        :return: func -> method
         """
 
         @wraps(func)
@@ -68,7 +68,7 @@ class Monitor:
 
         :param func: Function to monitor.
         :param param_details: Parameter location details tuple(<parameter_args_index>, <parameter_name>)
-        :return: func
+        :return: func -> method
         """
         @wraps(func)
         def method(*args, **kwargs):
@@ -82,7 +82,7 @@ class Monitor:
 
         :param func: Function to monitor.
         :param param_details: Parameter location details tuple(<parameter_args_index>, <parameter_name>)
-        :return: func
+        :return: func -> method
         """
         @wraps(func)
         def method(*args, **kwargs):
